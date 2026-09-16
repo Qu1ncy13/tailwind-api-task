@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@config "./tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-sand text-forest font-montserrat m-0;
+  }
+  h1, h2, h3 {
+    @apply font-tenor;
+  }
+  h2 {
+    @apply text-5xl;
+  }
+}
+
+@layer components {
+  
+  .container {
+    @apply max-w-[1140px] w-full mx-auto px-6;
+  }
+
+  .btn {
+    @apply border border-sage text-cream bg-sage px-10 py-[7px] rounded-[10px] text-xl leading-none font-tenor cursor-pointer transition duration-300;
+  }
+  .btn:hover {
+    @apply bg-sage-dark scale-[1.02];
+  }
+  .btn:active {
+    @apply bg-sage-darker scale-100;
+  }
+
+  .nav-link {
+    @apply relative text-forest font-tenor text-xl no-underline;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-0.5 left-0 h-px w-0 bg-forest transition-all duration-300;
+  }
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .form-field {
+    @apply font-montserrat text-[20px] text-cream bg-transparent border border-cream rounded-md px-3.5 py-3 w-full placeholder-cream;
+  }
+
+  
+  .service-card {
+    @apply w-[255px];
+  }
+  .service-card img {
+    @apply block w-[255px] h-[260px] border-4 border-sage rounded-[5px] object-cover;
+  }
+  .service-card h3 {
+    @apply my-2.5 font-tenor text-[26px] font-normal text-center;
+  }
+  .service-card p {
+    @apply m-0 font-montserrat text-base leading-[1.4] text-left;
+  }
+
+  
+  .staff-cards {
+    @apply grid grid-cols-4 gap-x-5 gap-y-10;
+  }
+  .staff-description {
+    @apply col-start-4 row-start-1 text-left;
+  }
+  .staff-card {
+    @apply flex flex-col text-center gap-[5px];
+  }
+  .staff-card img {
+    @apply block aspect-square w-full object-cover border-4 border-sage rounded-[5px];
+  }
+
+  
+  .houses-cards {
+    @apply flex flex-col mt-5 mb-28 gap-5;
+  }
+  .house-card {
+    @apply flex flex-row bg-sage gap-[30px] rounded-[5px] overflow-hidden;
+  }
+  .card-image-div {
+    @apply relative w-1/3;
+  }
+  .card-image-div img {
+    @apply absolute inset-0 w-full h-full object-cover;
+  }
+  .card-info {
+    @apply flex flex-col text-left w-2/3 justify-center gap-3 mx-[30px] py-8;
+  }
+  .card-info h3 {
+    @apply text-cream text-[36px] m-0;
+  }
+  .card-info p {
+    @apply text-cream text-lg m-0;
+  }
+  .card-bottom {
+    @apply flex flex-row justify-between items-center mt-3;
+  }
+  .card-button {
+    @apply bg-cream px-8 py-2.5 font-tenor text-sage text-lg rounded-2xl cursor-pointer;
+  }
+
+  
+  .social-icon {
+    @apply w-10 h-10 rounded-full bg-sage flex items-center justify-center transition-colors duration-200;
+  }
+  .social-icon:hover {
+    @apply bg-sage-dark;
+  }
+}
